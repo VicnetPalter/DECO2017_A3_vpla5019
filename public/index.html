@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- linking all other files such as css and js files to be accessed throughout html -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <script src="script.js"></script>
+    <title>Flexy Flamingo</title>
 </head>
+
 <body>
-    <h1> Does this server work</h1>
+    <!-- initialising/organising all content of website with containers and class names to ensure ease of css application -->
+    <header class="header">
+        <img src = 'Logo.png' alt = 'Flexy Flamingo Logo'>
+        <h1>Composure, Class, Elegance</h1>
+        <h2>Stretch Like a Flamingo</h2>
+    </header>
+    
+    <div id = "landingPg">
+        <h1 id= "workoutTitle">Workouts</h1>
+        <h2>You haven't completed any workouts yet...</h2>
+    </div>
+
+    <div id = "workoutPg" >
+        <h1>Workout</h1>
+
+            <h2>Type of Stretch</h2>
+
+            <select name="stretchType" id="stretchType">
+                <option value = "Free Stretch">Free Stretch</option> </option>
+                <optgroup label = "Arms">
+                    <option value="Tricep">Tricep</option>
+                    <option value="Rear Delt">Rear Delt</option>
+                    <option value="Front Delt">Front Delt</option>
+                    <option value="Bicep">Bicep</option>
+                </optgroup>
+
+                <optgroup label = "Legs">
+                    <option value="Quad">Quad</option>
+                    <option value="Hamstring">Hamstring</option>
+                    <option value="Calf">Calf</option>
+                </optgroup>
+
+                <optgroup label = "Back">
+                    <option value="Lats">Lats</option>
+                    <option value="Traps">Traps</option>
+                    <option value="Rhomboids">Rhomboids</option>
+                </optgroup>
+
+                <optgroup label = "Hips">
+                    <option value="Hip Flexor">Hipe Flexor</option>
+                    <option value="Adductors">Adductors</option>
+                    <option value="Tensors">Tensors</option>
+                </optgroup>
+            </select>
+            
+            <input placeholder = "Enter depth in cm" type = "number" id = "stretchDepth">
+
+            <button type = "button" onclick = "saveData()">Finish and Save Workout</button>
+
+            <h2>Stretch Depth</h2>
+            
+            <h2>Time stretching</h2>
+        
+    </div>
+    
+    <aside>
+        <button class = "newWorkout" type = "button" onclick = "createWorkout()">+</button>
+    </aside>
+
     
 </body>
 </html>
