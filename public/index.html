@@ -6,29 +6,138 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <title>Flexy Flamingo</title>
 </head>
 
 <body>
-    <!-- initialising/organising all content of website with containers and class names to ensure ease of css application -->
+<!-- initialising/organising all content of website with containers and class names to ensure ease of css application -->
     <header class="header">
-        <img src = 'Logo.png' alt = 'Flexy Flamingo Logo'>
+        <img src = 'Images\Logo.png' alt = 'Flexy Flamingo Logo'>
         <h1>Composure, Class, Elegance</h1>
         <h2>Stretch Like a Flamingo</h2>
     </header>
     
-    <div id = "landingPg">
+    <div class = "landingPg">
         <h1 id= "workoutTitle">Workouts</h1>
-        <h2>You haven't completed any workouts yet...</h2>
+        <h2 id ="noWorkouts">You haven't completed any workouts yet...</h2>
     </div>
 
-    <div id = "workoutPg" >
-        <h1>Workout</h1>
+    <div class = "workoutPg" >
+
+        <h1 id = "workoutPgTitle"> Workout</h1>
 
             <h2>Type of Stretch</h2>
+<!-- this section holds all the information on the stretch and an img for each stretch -->
+<!-- tricep -->
+                <img id = "tricepImg" class = "stretchImgs" src = 'Images\Tricep.png'>
+                <p id = "tricepDescription" class = "stretchDescription">
+                    <span>Tricep Stretch</span> 
+                    Place your elbow above your head and
+                    reach down the centre of your back to feel
+                    the stretch on your tricep. Link your other
+                    hand behind your back for a more advanced
+                    stretch.
+                </p>
+<!-- Rear delt -->
+                <img  id = "rearDeltImg" class = "stretchImgs" src = 'Images\Rear Delt.png'>
+                <p id = "rearDeltDescription" class = "stretchDescription">
+                    <span>Rear Delt Stretch</span> 
+                    Relax your shoulders.
+                    Reach one arm across your body, using your other arm or wrist to hold it gently by your upper arm.
+                    Slowly begin to pull your arm toward your chest, as far as possible, allowing the stretch to reach deep into the back of your shoulder.
+                </p>
+<!-- Front Delt -->
+                <img  id = "frontDeltImg" class = "stretchImgs" src = 'Images\Front Delt.png'>
+                <p id = "frontDeltDescription" class = "stretchDescription">
+                    <span>Front Delt Stretch</span> 
+                    With your spine straight, reach your arms behind you and interlace your fingers.
+                    Roll your shoulders back to sit up tall, allowing your chest to open up, and gently squeeze your shoulder blades together.
+                    Moving slowly, carefully straighten your arms.
+                </p>
+<!-- Bicep -->
+                <img  id = "bicepImg" class = "stretchImgs" src = 'Images\Bicep.png'>
+                <p id = "bicepDescription" class = "stretchDescription">
+                    <span>Bicep Stretch</span> 
+                    Interlace fingers behind your back.
+                    Keep hands at the base of your spine.
+                    Straighten your arms.
+                    Lift arms as high as you can.
+                </p>
+<!-- Quad -->
+                <img  id = "quadImg" class = "stretchImgs" src = 'Images\Quad.png'>
+                <p id = "quadDescription" class = "stretchDescription">
+                    <span>Quad Stretch</span> 
+                    Stand with your side to the wall, placing a hand on the wall for balance.
+                    Hold your outside foot with your outside hand and lift the foot up toward your rear end,
+                    keeping your thighs and knees together.
+                </p>
+<!-- hamstring -->
+                <img  id = "hamstringImg" class = "stretchImgs" src = 'Images\Hamstring.png'>
+                <p id = "hamstringDescription" class = "stretchDescription">
+                    <span>Hamstring Stretch</span> 
+                    Stand with your spine in a neutral position.
+                    Then place your right leg in front of you. Bend your left knee slightly.
+                    Gently lean forward while placing your hands on your bent right leg.
+                    Be sure to keep your back straight to avoid hunching over your leg.
+                </p>
+<!-- calf -->
+                <img  id = "calfImg" class = "stretchImgs" src = 'Images\Calf.png'>
+                <p id = "calfDescription" class = "stretchDescription">
+                    <span>Calf Stretch</span> 
+                    Stand near a wall with one foot in front of the other, front knee slightly bent.
+                    Keep your back knee straight, your heel on the ground, and lean toward the wall.
+                    Feel the stretch all along the calf of your back leg.
+                </p>
+<!-- lats -->
+                <img  id = "latsImg" class = "stretchImgs" src = 'Images\Lats.png'>
+                <p id = "latsDescription" class = "stretchDescription">
+                    <span>Lats Stretch</span> 
+                    From a kneeling position, sink your hips back and place your right forearm along the floor.
+                    Lean your weight onto your right arm and stretch out your left arm, reaching out through your fingertips.
+                </p>
+<!-- traps -->
+                <img  id = "trapsImg" class = "stretchImgs" src = 'Images\Traps.png'>
+                <p id = "trapsDescription" class = "stretchDescription">
+                    <span>Traps Stretch</span> 
+                    Lift your right hand up and over your head, resting your hand on your left cheekbone.
+                    Do not pull on your head now, though. Simply rest your hand there for just slightly more pressure.
+                    This very gently stretches your upper trapezius.
+                </p>
+<!-- rhomboid -->
+                <img  id = "rhomboidsImg" class = "stretchImgs" src = 'Images\Rhomboid.png'>
+                <p id = "rhomboidsDescription" class = "stretchDescription">
+                    <span>Rhomboid Stretch</span> 
+                    Stack your hands with your right hand over your left.
+                    Extend your arms out in front of you as you slowly reach forward to feel
+                    a gentle stretch between your shoulder blades.
+                </p>
+<!-- hip flexor -->
+                <img  id = "hipFlexorImg" class = "stretchImgs" src = 'Images\Hipflexor.png'>
+                <p id = "hipFlexorDescription" class = "stretchDescription">
+                    <span>Hip Flexor Stretch</span> 
+                    Kneel on your right knee.
+                    Put your left foot on the floor with your left knee at a 90-degree angle.
+                    Drive your hip forward. Maintaining a straight back, lean your torso forward.
+                </p>
+<!-- adductor -->
+                <img  id = "adductorImg" class = "stretchImgs" src = 'Images\Adductor.png'>
+                <p id = "adductorDescription" class = "stretchDescription">
+                    <span>Adductor Stretch</span> 
+                    Lie on your side on a mat.
+                    Bend your top knee so it points toward the ceiling and place the foot flat on the floor in front of your bottom leg.
+                    Keeping your bottom leg long and foot flexed, lift your bottom leg off the floor, contracting your adductors.
+                </p>
+<!-- tensor -->
+                <img  id = "tensorImg" class = "stretchImgs" src = 'Images\Tensor.png'>
+                <p id = "tensorDescription" class = "stretchDescription">
+                    <span>Tensor Stretch</span> 
+                    Come into a lying position on a soft surface such as a mat with the hands behind the head.
+                    Bend the knees so the feet are flat on the ground beyond hip width.
+                    Slowly drop one knee in towards the ground and hold 
+                </p>
+<!-- end stretch description content section -->
 
-            <select name="stretchType" id="stretchType">
+            <select onchange = "stretchDescription()" name="stretchType" id="stretchType">
                 <option value = "Free Stretch">Free Stretch</option> </option>
                 <optgroup label = "Arms">
                     <option value="Tricep">Tricep</option>
@@ -50,26 +159,54 @@
                 </optgroup>
 
                 <optgroup label = "Hips">
-                    <option value="Hip Flexor">Hipe Flexor</option>
+                    <option value="Hip Flexor">Hip Flexor</option>
                     <option value="Adductors">Adductors</option>
                     <option value="Tensors">Tensors</option>
                 </optgroup>
             </select>
-            
-            <input placeholder = "Enter depth in cm" type = "number" id = "stretchDepth">
-
-            <button type = "button" onclick = "saveData()">Finish and Save Workout</button>
 
             <h2>Stretch Depth</h2>
+            <input placeholder = "Enter depth in cm" type = "number" id = "stretchDepth">
+
+<!-- implementation of geeks for geeks stop watch modification https://www.geeksforgeeks.org/how-to-create-stopwatch-using-html-css-and-javascript/ -->
+            <div class="container">
+                    
+                <div id="time">
+                    <span class="digit" id="hr">
+                        </span>
+                    <span class="txt">m</span>
+                    <span class="digit" id="min">
+                        00</span>
+                    <span class="txt">s</span>
+                    <span class="digit" id="sec">
+                        00</span>
+                    <span class="txt">ms</span>
+                    <span class="digit" id="count">
+                        00</span>
+                </div>
+                <div id="buttons">
+                    <button class="btn" id="start">
+                        Start</button>
+                    <button class="btn" id="stop">
+                        Stop</button>
+                    <button class="btn" id="reset">
+                        Reset</button>
+
+                </div>
+            </div>            
+
+<!-- end of implementation of geeks for geeks stop watch -->
+            <button type = "button" onclick = "saveData()" >Finish and Save Workout</button>
+
             
-            <h2>Time stretching</h2>
         
     </div>
     
     <aside>
-        <button class = "newWorkout" type = "button" onclick = "createWorkout()">+</button>
+        <button id = "plusButton" class = "newWorkout" type = "button" onclick = "createWorkout()">+</button>
     </aside>
 
+    <script src="script.js"></script>
     
 </body>
 </html>
