@@ -3,9 +3,14 @@
 // this is an array of arrays with each workout being its own array
 const workoutData = [];
 
-//array that contains all created elements when the summary function runs
+//array that contains all summary details of workout
 
 const workoutSummaryArray = [];
+
+// array that contains all extra details to be shown on button click
+
+const extraDetailsArray = [];
+
 
 //counter for tracking how many workouts completed
 var workoutCounter = 0;
@@ -49,12 +54,14 @@ resetBtn.addEventListener('click', function () {
 
 //hiding all content that will be revealed as the user clicks buttons and navigates website
 document.getElementsByClassName('workoutPg')[0].style.display = 'none';
+document.getElementsByClassName("container")[0].style.display = 'none';
 
 
 //functions
 
 //createWorkout function allows user to create a new workout from the start screen by hiding and revealing elements. 
 function createWorkout() {
+	document.getElementsByClassName("container")[0].style.display = '';
     document.getElementsByClassName('landingPg')[0].style.display = 'none';
 	document.getElementsByClassName('workoutPg')[0].style.display = '';
 	document.getElementById("plusButton").style.display = 'none';
@@ -121,6 +128,8 @@ function saveData () {
 	document.getElementsByClassName('workoutPg')[0].style.display = 'none';
     document.getElementsByClassName('landingPg')[0].style.display = '';
 	document.getElementById("plusButton").style.display = '';
+	document.getElementsByClassName('container')[0].style.display = 'none';
+
 //resetting the timer for the next workout	
 	timer = false;
 	minute = 0;
@@ -134,6 +143,9 @@ function saveData () {
 	document.getElementById('stretchDepth').placeholder = "Enter Depth in cm";
 //resetting the stretch type to default
 	document.getElementById('stretchType').value = 'Free Stretch';
+
+//hiding some div elements
+
 // to finish this function when the user click finish and save this will then call the workoutSummary function
 	workoutSummary();
 
@@ -145,8 +157,11 @@ function saveData () {
 
 //the following function workoutSummary displays the workout details 
 function workoutSummary() {
-//create array of each created new element
+//create array of each summary element
 	let singleWorkoutSummary = [];
+//create array that holds all extra details
+ 	let singleExtra = [];
+
 //hiding the no workout default text if there is atleast 1 workout completed 
 	if (workoutCounter != 0){
 	document.getElementById("noWorkouts").style.display = 'none';
@@ -174,113 +189,136 @@ function workoutSummary() {
 //fill the container with html elements and fill elements with array values
 
 //create workout label
-		const workoutLabel = document.createElement("p");
-		workoutLabel.className = "workoutLabel";
-		workoutLabel.innerText ="Workout " +  workoutData[workoutCounter-1][3];
-		workoutContainer.appendChild(workoutLabel);
+
+		let workoutLabel ="Workout " +  workoutData[workoutCounter-1][3];
 		singleWorkoutSummary.push(workoutLabel);
 
 //create stretchType
-		const stretchType = document.createElement("p");
-		stretchType.id = "stretchType";
-		stretchType.innerText = workoutData[workoutCounter-1][0];
-		workoutContainer.appendChild(stretchType);
+		let stretchType ="Stretch Type: " + workoutData[workoutCounter-1][0];
 		singleWorkoutSummary.push(stretchType);
 
 
 //create stretchDepth
-		const stretchDepth = document.createElement("p");
-		stretchDepth.id = "stretchDepth";
-		stretchDepth.innerText = workoutData[workoutCounter-1][1];
-		workoutContainer.appendChild(stretchDepth);
+
+		let stretchDepth = "Stretch Depth: " + workoutData[workoutCounter-1][1] + "cm";
 		singleWorkoutSummary.push(stretchDepth);
 
 //create and format stretch time
-		const stretchTime = document.createElement("p");
-		stretchTime.id = "stretchTime";
-		stretchTime.innerText = workoutData[workoutCounter-1][2][0] + "m "+ workoutData[workoutCounter-1][2][1] + "s "  + workoutData[workoutCounter-1][2][2] + "ms";
-		workoutContainer.appendChild(stretchTime);
+		let stretchTime ="Stretch Time: " + workoutData[workoutCounter-1][2][0] + "m "+ workoutData[workoutCounter-1][2][1] + "s "  + workoutData[workoutCounter-1][2][2] + "ms";
 		singleWorkoutSummary.push(stretchTime);
 
-//create new div to add all extra data to within workoutContainer
-		const extraDetail = document.createElement("div");
-		extraDetail.className = "extraDetail"
-		workoutContainer.appendChild(extraDetail);
-		singleWorkoutSummary.push(extraDetail);
-
 //create and hide title
-		const detailsTitle = document.createElement("p");
-		detailsTitle.className = "detailsTitle";
-		detailsTitle.innerText = "Details of Your Workout";
-		extraDetail.appendChild(detailsTitle);
-		singleWorkoutSummary.push(detailsTitle);
-
+		let detailsTitle = "Details of Your Workout";
+		singleExtra.push(detailsTitle);
 
 //create  unique id
-		const uniqueId = document.createElement("p");
-		uniqueId.className= "uniqueId";
-		uniqueId.innerText ="unique ID: " + workoutData[workoutCounter-1][4];
-		extraDetail.appendChild(uniqueId);
-		singleWorkoutSummary.push(uniqueId);
-
+		let uniqueId ="unique ID: " + workoutData[workoutCounter-1][4];
+		singleExtra.push(uniqueId);
 
 //create  date
-		const workoutDate = document.createElement("p");
-		workoutDate.className= "workoutDate";
-		workoutDate.innerText ="Date: " + workoutData[workoutCounter-1][5];
-		extraDetail.appendChild(workoutDate);
-		singleWorkoutSummary.push(workoutDate);
-
-
+		let workoutDate ="Date: " + workoutData[workoutCounter-1][5];
+		singleExtra.push(workoutDate);
 
 //create  button to close pop up
-		const closeDetail = document.createElement("button");
-		closeDetail.className = "closeDetail";
-		closeDetail.innerText = "X"
-		workoutContainer.appendChild(closeDetail);
-		closeDetail.onclick = function(){
-
-		}
+		let closeDetail = "X"
 		singleWorkoutSummary.push(closeDetail);
-//create button to trigger a pop up of more detailed summary of workout
-		const moreDetail = document.createElement("button");
-		moreDetail.className = "moreDetail";
-		moreDetail.innerText = "Details"
-		workoutContainer.appendChild(moreDetail);
-		
-		moreDetail.onclick = function(){
 
-		}
+//create button to trigger a pop up of more detailed summary of workout
+		let moreDetail = "Details"
 		singleWorkoutSummary.push(moreDetail);
 
 //create button that deletes element from array
-		const deleteButton = document.createElement("button")
-		deleteButton.id = "deleteButton";
-		deleteButton.innerText = 'Delete Workout';
-		workoutContainer.appendChild(deleteButton);
+		let deleteButton = 'Delete Workout';
+		singleWorkoutSummary.push(deleteButton);
 
-		deleteButton.onclick = function () {
-	
+
+		extraDetailsArray.push(singleExtra)
+		workoutSummaryArray.push(singleWorkoutSummary);
+
+
+		for (let element = 0; element < workoutSummaryArray.length; element ++) {
+			console.log(document.getElementById('toggleDetail'))
+		if (workoutSummaryArray[element] == undefined){
+			console.log('error test')
+			continue;
+		}
+			for (i of workoutSummaryArray[element]) {
+			if (i == 'X'){
+				let value = document.createElement('button')
+				value.className = "X"
+				value.innerText = "X";
+				workoutContainer.appendChild(value);
+				value.style.display = 'none';
+				value.onclick = function () {
+				for (x of document.getElementsByClassName("X")){
+					x.style.display = 'none';
+					}
+					hideDetails();
+				}
+
 
 			}
-		singleWorkoutSummary.push(deleteButton);
-		workoutSummaryArray.push(singleWorkoutSummary);
-		console.log(workoutData)
-		for (element of workoutData) {
-			for (i of element) {
-			const element = document.createElement('p')
-			element.innerText = element ;
-			workoutContainer.appendChild(element);
-			console.log(element);
+			else if ( i == "Details"){
+				let value = document.createElement("button");
+				value.innerText = "Details";
+				workoutContainer.appendChild(value);
+				value.onclick = function () {
+					for (x of document.getElementsByClassName("X")){
+					x.style.display = '';
+					}
+					showDetails();
+					
+				}
+			}
+			else if ( i == "Delete Workout"){
+				let value = document.createElement("button");
+				value.innerText = "DeleteWorkout";
+				workoutContainer.appendChild(value);
+				console.log(workoutSummaryArray)
+			
+				value.onclick = function () {
+					delete workoutSummaryArray[element];
+					workoutSummaryArray.push('');
+					console.log(workoutSummaryArray)
+					
+
+					
+				}
+
+			}
+
+			
+			else {
+			console.log(workoutSummaryArray)
+			let value = document.createElement('p')
+			value.innerText = i ;
+			value.Id = i;
+			workoutContainer.appendChild(value);
+			}
 			}
 		}
 
-		
+
 
 	}
 
-function testFunction (){
-	console.log("banana");
+
+function showDetails (){
+	const workoutContainer = document.createElement("div");
+	workoutContainer.className = "workoutContainer";
+	document.body.appendChild(workoutContainer);
+	for (element of extraDetailsArray){
+		for(i of element){
+			let value = document.createElement("p");
+			value.innerText = i;
+			workoutContainer.appendChild(value);
+		}
+	}
+}
+function hideDetails (){
+	console.log('nanaan')
+	delete extraDetailsArray[0];
+	
 }
 
 
@@ -327,6 +365,15 @@ function testFunction (){
 	}
 //end of implementation of geeks for geeks stop watch
 
+// function for hiding and showing details
+function toggleFunction() {
+	var x = document.getElementById("toggleDetail");
+	if (x.style.display === "none") {
+	  x.style.display = "block";
+	} else {
+	  x.style.display = "none";
+	}
+  }
 //function for displaying stretch info when selecting stretch from drop down.
 function stretchDescription() {
 //tracking what drop down is selected

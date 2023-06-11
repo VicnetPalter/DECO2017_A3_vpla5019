@@ -1,3 +1,420 @@
-#landingPg  {
-    color:aquamarine;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0; 
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*End Eric Myer Reset  */
+/* ------------------------------------------------------------------- */
+
+
+body {
+    display: grid;
+    margin-top:0;
+    grid-template-areas: 
+    
+    "header header header header"
+    "main main main aside ";
+    
+}
+
+/* styling and grid layout for the header which is jsut the logo and slogan/ title */
+header {
+    display: flex;
+    flex-direction: row;
+    grid-area: header;
+
+}
+
+#logo {    
+
+    border-radius: 0vw 0vw 1vw 1vw;
+    margin:1vw;
+    padding: 2vw;
+    width: 24vw;
+    height: 24vw;
+    background:#BBFCF2; 
+
+}
+#headText {
+    text-align: center;
+    justify-content: center;
+    margin:1vw;
+    height: 20vw;
+    border-radius: 0vw 0vw 1vw 1vw;
+    padding:3vw;
+    width: 100%;
+    background: #97ffe0;
+
+}
+
+#headText h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 5vw;
+    margin:1vw;
+    padding:1vw;
+    color: white;
+}
+#headText h2 {
+    font-family: 'Pacifico';
+    margin:1vw;
+    padding: 1vw;
+    font-size: 3vw;
+    color: #F1A4FF;
+}
+/*  end styling for the header */
+
+/*styling and grid for main workout page */
+
+.landingPg {
+    grid-area: main;
+    background:#BBFCF2; 
+    margin:1vw;
+    padding:1vw;
+    border-radius: 1vw 1vw 1vw 1vw;
+    height:100vw;
+
+}
+
+aside {
+
+    grid-area: aside;
+}
+
+#plusButton {
+    position:sticky;
+    top: 3vw;
+    font-size: 10vw;
+    color: white;
+    background-color:#F1A4FF;
+    border-color: white;
+    border-width: 0.3vw;
+    border-radius: 1vw 1vw 1vw 1vw;
+    height: 15vw;
+    width: 15vw;
+    margin:1vw;
+    padding:1vw;
+    
+}
+#plusButton:hover {
+    background-color:#eb89fd;
+
+}
+.landingPg h1 {
+    text-align: center;
+    font-family: 'Pacifico';
+    margin:1vw;
+    padding: 1vw;
+    font-size: 3vw;
+    color: #F1A4FF;
+}
+.landingPg h2 {
+    background:#F1A4FF; 
+    border-radius: 0.5vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin:1vw;
+    padding: 1vw;
+    font-size: 2vw;
+    color:white;
+}
+/* end styling for landing page */
+
+/* begin styling and grid assigning for tracking workout page */
+.workoutPg {
+
+    grid-area:main;
+    background:#BBFCF2; 
+    opacity: 0.8;
+    margin:1vw;
+    padding:1vw;
+    margin-right: 0;
+    border-radius: 1vw 0vw 0vw 1vw;
+    height: 100%;
+
+}
+
+.container {
+
+    grid-area: aside;
+    background:#55D5C1; 
+    opacity: 0.8;
+    margin:1vw;
+    margin-left: 0;
+    padding:1vw;
+    border-radius: 0vw 1vw 1vw 0vw;
+    height: 100%;
+}
+
+#finishSave {
+    position: sticky;
+    bottom: 1vw;
+    font-size: 2vw;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    background-color:#F1A4FF;
+    border-color: white;
+    border-width: 0.3vw;
+    border-radius: 1vw 1vw 1vw 1vw;
+    height: 8vw;
+    width: 20vw;
+    margin:1vw;
+    margin-top: 5vw;
+    padding:1vw;
+    align-items: bottom;
+    
+}
+#finishSave:hover {
+    background-color:#eb89fd;
+
+}
+
+
+#stretchType, #stretchDepth   {
+
+    background-color: #72F7CE;
+    font-size: 2vw;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    background-color:#F1A4FF;
+    border-color: white;
+    border-radius: 1vw 1vw 1vw 1vw;
+    height: 5vw;
+    width: 20vw;
+    padding:1vw;
+    margin-left: 1vw;
+}
+#stretchType:hover, #stretchDepth:hover {
+    background-color:#eb89fd;
+
+}
+#stretchDepth::placeholder {
+    color:white;
+    height: 3vw;
+    padding:0vw;
+    margin: 0vw;
+
+
+}
+#stretchDepth {
+    height: 2.8vw;
+
+}
+#workoutPgTitle {
+    position:relative;
+    top: 3vw;
+    font-size: 5vw;
+    font-family: 'Ubuntu', sans-serif;
+    color:#eb89fd;
+
+
+}
+#inputAndTitles1 {
+    font-size: 3vw;
+    font-family: 'Pacifico', cursive;
+    color:#eb89fd;
+    margin-top: 5vw;
+    margin-left: 0vw;
+    margin-right: 1vw;
+    display: flex;
+    flex-direction: row;
+    padding:1vw;
+
+}
+#inputAndTitles2 {
+    font-size: 3vw;
+    font-family: 'Pacifico', cursive;
+    color:#eb89fd;
+    margin-left: 0vw;
+    margin-right: 1vw;
+    display: flex;
+    flex-direction: row;
+    padding:1vw;
+}
+
+/* styling end for workout inputs */
+
+/* styling for stop watch element */
+.txt {
+    font-size: 3vw;
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+}
+.digit {
+    font-size: 5vw;
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+}
+#time {
+    text-align: center;
+    margin-top: 6vw;
+    padding:1vw;
+}
+#stickyDiv {
+    background-color: #72F7CE;
+    border-radius: 1vw;
+    position:sticky;
+    top: 10vw;
+}
+#buttons {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left:3.5vw;
+    margin-top:4vw;
+    padding:1vw;
+
+}
+#start, #stop, #reset {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2vw;
+    height:4vw;
+    width: 6vw;
+    color:white;
+    border-color: white;
+    border-width: 0.1vw;
+    border-radius: 1vw ;
+    margin:1vw;
+}
+
+#start {
+    background-color: rgb(81, 195, 81);
+}
+#stop {
+    background-color: rgb(192, 95, 86);
+}
+#reset {
+    background-color: rgb(182, 88, 205);
+}
+
+/* styling images and descriptions when clicked */
+
+#descriptions {
+    background-color:#e760ff;
+    grid-area:main;
+    border-radius: 1vw;
+    border-color: white;
+}
+#descriptions img {
+    margin:1vw;
+    padding:1vw;
+    width: 15vw;
+    height:15vw;
+    background-color: #BBFCF2;
+    border-radius: 1vw;
+
+}
+#descriptions p {
+    font-size: 1.5vw;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin:1vw;
+    padding:1vw;
+    width: 40vw;
+    height:10vw;
+}
+
+.workoutContainer {
+    display:flex;
+    flex-direction: column;
+    grid-area: main;
+    font-size: 3vw;
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+    margin-top: 10vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    background-color:#F1A4FF;
+    height: 100%;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+.workoutContainer button {
+    background-color: #72F7CE;
+    width:18vw;
+    font-size: 2vw;
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+    padding: 1vw;
+    border-radius: 1vw;
+    border-color: white;
+}
+@media only screen and (max-width: 700px) {
+    body {
+        display: grid;
+        margin-top:0;
+        grid-template-areas: 
+        
+        "header header"
+        "main main"
+        "aside aside";
+        
+    }
+
+    #plusButton {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        margin-top: auto;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    #headText {
+        height: 15vw ;
+    }
+    #logo {
+    display: flex;
+    justify-content: center;
+    }
+
+    #buttons {
+        display: flex;
+        justify-content: center;
+        margin:1vw;
+
+    }
+    #start, #stop, #reset {
+        width: 7vw;
+    }
+
 }

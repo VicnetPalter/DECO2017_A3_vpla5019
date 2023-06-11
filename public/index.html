@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Flexy Flamingo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <!-- initialising/organising all content of website with containers and class names to ensure ease of css application -->
     <header class="header">
-        <img src = 'Images\Logo.png' alt = 'Flexy Flamingo Logo'>
-        <h1>Composure, Class, Elegance</h1>
-        <h2>Stretch Like a Flamingo</h2>
+        <img id = "logo" src = 'Images\Logo.png' alt = 'Flexy Flamingo Logo'>
+        <div id = "headText">
+            <h1>Composure, Class, Elegance</h1>
+            <h2>Stretch Like a Flamingo</h2>
+        </div>
     </header>
     
     <div class = "landingPg">
@@ -23,12 +27,44 @@
     </div>
 
     <div class = "workoutPg" >
-
         <h1 id = "workoutPgTitle"> Workout</h1>
+        <div id = "inputAndTitles1">
+            <h2 id = "typeTitle">Type of Stretch</h2>
+            <select onchange = "stretchDescription()" name="stretchType" id="stretchType">
+                <option value = "Free Stretch">Free Stretch</option> </option>
+                <optgroup label = "Arms">
+                    <option value="Tricep">Tricep</option>
+                    <option value="Rear Delt">Rear Delt</option>
+                    <option value="Front Delt">Front Delt</option>
+                    <option value="Bicep">Bicep</option>
+                </optgroup>
 
-            <h2>Type of Stretch</h2>
+                <optgroup label = "Legs">
+                    <option value="Quad">Quad</option>
+                    <option value="Hamstring">Hamstring</option>
+                    <option value="Calf">Calf</option>
+                </optgroup>
+
+                <optgroup label = "Back">
+                    <option value="Lats">Lats</option>
+                    <option value="Traps">Traps</option>
+                    <option value="Rhomboids">Rhomboids</option>
+                </optgroup>
+
+                <optgroup label = "Hips">
+                    <option value="Hip Flexor">Hip Flexor</option>
+                    <option value="Adductors">Adductors</option>
+                    <option value="Tensors">Tensors</option>
+                </optgroup>
+            </select>
+        </div>
+            <div id = "inputAndTitles2">
+            <h2 id = 'depthTitle'>Stretch Depth</h2>
+            <input placeholder = "Enter depth in cm" type = "number" id = "stretchDepth">
+        </div>
 <!-- this section holds all the information on the stretch and an img for each stretch -->
 <!-- tricep -->
+        <div id = 'descriptions'>
                 <img id = "tricepImg" class = "stretchImgs" src = 'Images\Tricep.png'>
                 <p id = "tricepDescription" class = "stretchDescription">
                     <span>Tricep Stretch</span> 
@@ -135,76 +171,60 @@
                     Bend the knees so the feet are flat on the ground beyond hip width.
                     Slowly drop one knee in towards the ground and hold 
                 </p>
+                </div>
 <!-- end stretch description content section -->
 
-            <select onchange = "stretchDescription()" name="stretchType" id="stretchType">
-                <option value = "Free Stretch">Free Stretch</option> </option>
-                <optgroup label = "Arms">
-                    <option value="Tricep">Tricep</option>
-                    <option value="Rear Delt">Rear Delt</option>
-                    <option value="Front Delt">Front Delt</option>
-                    <option value="Bicep">Bicep</option>
-                </optgroup>
 
-                <optgroup label = "Legs">
-                    <option value="Quad">Quad</option>
-                    <option value="Hamstring">Hamstring</option>
-                    <option value="Calf">Calf</option>
-                </optgroup>
-
-                <optgroup label = "Back">
-                    <option value="Lats">Lats</option>
-                    <option value="Traps">Traps</option>
-                    <option value="Rhomboids">Rhomboids</option>
-                </optgroup>
-
-                <optgroup label = "Hips">
-                    <option value="Hip Flexor">Hip Flexor</option>
-                    <option value="Adductors">Adductors</option>
-                    <option value="Tensors">Tensors</option>
-                </optgroup>
-            </select>
-
-            <h2>Stretch Depth</h2>
-            <input placeholder = "Enter depth in cm" type = "number" id = "stretchDepth">
-
-<!-- implementation of geeks for geeks stop watch modification https://www.geeksforgeeks.org/how-to-create-stopwatch-using-html-css-and-javascript/ -->
-            <div class="container">
-                    
-                <div id="time">
-                    <span class="digit" id="hr">
-                        </span>
-                    <span class="txt">m</span>
-                    <span class="digit" id="min">
-                        00</span>
-                    <span class="txt">s</span>
-                    <span class="digit" id="sec">
-                        00</span>
-                    <span class="txt">ms</span>
-                    <span class="digit" id="count">
-                        00</span>
-                </div>
-                <div id="buttons">
-                    <button class="btn" id="start">
-                        Start</button>
-                    <button class="btn" id="stop">
-                        Stop</button>
-                    <button class="btn" id="reset">
-                        Reset</button>
-
-                </div>
-            </div>            
-
-<!-- end of implementation of geeks for geeks stop watch -->
-            <button type = "button" onclick = "saveData()" >Finish and Save Workout</button>
 
             
-        
+
+                   
+
+            <button  id ="finishSave" type = "button" onclick = "saveData()" >Finish and Save Workout</button>
+
     </div>
-    
+            
+<!-- implementation of geeks for geeks stop watch modification https://www.geeksforgeeks.org/how-to-create-stopwatch-using-html-css-and-javascript/ -->
+
+    <div class="container">
+        <div id ="stickyDiv">      
+        <div id="time">
+            <span class="digit" id="hr">
+                </span>
+            
+            <span class="digit" id="min">
+                00</span>
+            <span class="txt">m</span>
+            <span class="digit" id="sec">
+                00</span>
+            <span class="txt">s</span>
+
+            <span class="digit" id="count">
+                00</span>
+            <span class="txt">ms</span>
+
+        </div>
+        <div id="buttons">
+            <button class="btn" id="start">
+                Start</button>
+            <button class="btn" id="stop">
+                Stop</button>
+            <button class="btn" id="reset">
+                Reset</button>
+
+        </div>
+    </div>   
+    </div>     
+<!-- end of implementation of geeks for geeks stop watch -->
+
     <aside>
         <button id = "plusButton" class = "newWorkout" type = "button" onclick = "createWorkout()">+</button>
     </aside>
+
+    
+
+
+    
 
     <script src="script.js"></script>
     
