@@ -13,6 +13,7 @@
 
 <body>
 <!-- initialising/organising all content of website with containers and class names to ensure ease of css application -->
+<!-- the header element is consistent throughout application so can have its very own container calld headere -->
     <header class="header">
         <img id = "logo" src = 'Images\Logo.png' alt = 'Flexy Flamingo Logo'>
         <div id = "headText">
@@ -20,11 +21,13 @@
             <h2>Stretch Like a Flamingo</h2>
         </div>
     </header>
-    
+<!-- each "page"/area has its on div container so it can be selected as one whole element -->
+
     <div class = "landingPg">
         <h1 id= "workoutTitle">Workouts</h1>
         <h2 id ="noWorkouts">You haven't completed any workouts yet...</h2>
     </div>
+<!--  the workout page where you log all your data includes sub divs that contain a drop down and all the user inputs -->
 
     <div class = "workoutPg" >
         <h1 id = "workoutPgTitle"> Workout</h1>
@@ -173,12 +176,7 @@
                 </p>
                 </div>
 <!-- end stretch description content section -->
-
-
-
-            
-
-                   
+<!-- another button element which takes you back to the workout summary page and displays all the detail you logged -->
 
             <button  id ="finishSave" type = "button" onclick = "saveData()" >Finish and Save Workout</button>
 
@@ -217,6 +215,7 @@
     </div>     
 <!-- end of implementation of geeks for geeks stop watch -->
 
+<!-- this aside element will be the add workout button it calls the createWorkout function when clicked -->
     <aside>
         <button id = "plusButton" class = "newWorkout" type = "button" onclick = "createWorkout()">+</button>
     </aside>

@@ -286,6 +286,7 @@ aside {
     margin-top: 6vw;
     padding:1vw;
 }
+/* allowing stopwatch element to stay on screen even when img is clicked */
 #stickyDiv {
     background-color: #72F7CE;
     border-radius: 1vw;
@@ -349,6 +350,7 @@ aside {
     width: 40vw;
     height:10vw;
 }
+/* styling for the workout summary page to display content */
 
 .workoutContainer {
     display:flex;
@@ -375,6 +377,8 @@ aside {
     border-radius: 1vw;
     border-color: white;
 }
+
+/* media query rearranging the grid so elements will display efficiently on smaller screens */
 @media only screen and (max-width: 700px) {
     body {
         display: grid;

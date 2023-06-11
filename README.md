@@ -1,44 +1,29 @@
-# Project name
+# Flexy Flamingo stretching application
 
 
-Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
+Project name is a Flexy FLamingo that allows users to track various different stretches to promote healthy lifestyle and being consistent with keeping up with your stretching goals. 
 
-Additional line of information text about what the project does. Your introduction should be around 2 or 3 sentences. Don't go overboard, people won't read it.
+The application lets you add workouts, select type of stretch(and display how to do stretch and identify muscle location), select the depth of th stretch to track performance, time the streth and then finally save the stretch;
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
-<!--- These are just example requirements. Add, duplicate or remove as required --->
-* You have installed the latest version of `<coding_language/dependency/requirement_1>`
-* You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
-* You have read `<guide/link/documentation_related_to_project>`.
 
-## Installing <project_name>
+Have access to the git hub repository
+Have cloned the respository and opened it in your preffered text editor.
 
-To install <project_name>, follow these steps:
+## Running the Website
 
-Linux and macOS:
-```
-<install_command>
-```
+The best and easiest to run this website is through your browser. 
 
-Windows:
-```
-<install_command>
-```
-## Using <project_name>
+1. When you are accessing this project in your text editor simple run the command: npm run start
+2. This is will host the website on the local port.
+3. Once the website is running click this link to open it in your browser. http://localhost:8888/
 
-To use <project_name>, follow these steps:
 
-```
-<usage_example>
-```
+## Contributing to Flexy Flamingo
 
-Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
-
-## Contributing to <project_name>
-<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
-To contribute to <project_name>, follow these steps:
+To contribute to Flext Flamingo, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
@@ -48,21 +33,13 @@ To contribute to <project_name>, follow these steps:
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## Contributors
 
-Thanks to the following people who have contributed to this project:
+## Important Notes on Function of Website
 
-* [@scottydocs](https://github.com/scottydocs) 📖
-* [@cainwatson](https://github.com/cainwatson) 🐛
-* [@calchuchesta](https://github.com/calchuchesta) 🐛
+The implementation of certain elements such as showing and hiding workout details are incomplete they work in some respect but when creating multiple workout and deleting various workouts details will still all show. See details button on website after creating a workout.
 
-You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
+Issues in selecting dynamically created elements based on array data elements occured leading to these problems. 
 
-## Contact
+When workouts are deleted they update after going to the summary page not actively this is due to them being deleted from an array and the update doesnt occur unless the function runs again. See script comments for more detail.  
 
-If you want to contact me you can reach me at <your_email@address.com>.
-
-## License
-<!--- If you're not sure which open license to use see https://choosealicense.com/--->
-
-This project uses the following license: [<license_name>](<link>).
+Apologies for these inconsistencies 

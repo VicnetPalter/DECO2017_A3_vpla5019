@@ -144,7 +144,6 @@ function saveData () {
 //resetting the stretch type to default
 	document.getElementById('stretchType').value = 'Free Stretch';
 
-//hiding some div elements
 
 // to finish this function when the user click finish and save this will then call the workoutSummary function
 	workoutSummary();
@@ -231,11 +230,16 @@ function workoutSummary() {
 		let deleteButton = 'Delete Workout';
 		singleWorkoutSummary.push(deleteButton);
 
-
+//pushing all the data collected from the workoutData array after it has been modified to workoutSummary array
 		extraDetailsArray.push(singleExtra)
 		workoutSummaryArray.push(singleWorkoutSummary);
 
+// loop for dynamically creating and displaying all the summary elements on the workout page after th user clicks save and finish 
+//this implementation is flawed as elements created dynamically will not have unique id's meaning they will have to have classes which are difficult to select 
+//individually, i ran out of time to make this implementation work :( :( but it has potential
 
+		//this loop iterated through workout summary and creates different types of elements depending on what string is in the array
+		//for example is the array element is "Details" it will create a button instead of a paragraph 
 		for (let element = 0; element < workoutSummaryArray.length; element ++) {
 			console.log(document.getElementById('toggleDetail'))
 		if (workoutSummaryArray[element] == undefined){
@@ -302,7 +306,7 @@ function workoutSummary() {
 
 	}
 
-
+//unfinished function implementation for showing and hiding details even if the workout is deleted
 function showDetails (){
 	const workoutContainer = document.createElement("div");
 	workoutContainer.className = "workoutContainer";
@@ -316,7 +320,6 @@ function showDetails (){
 	}
 }
 function hideDetails (){
-	console.log('nanaan')
 	delete extraDetailsArray[0];
 	
 }
